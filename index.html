@@ -9,23 +9,20 @@
 <body>
     <h1>Shut the box</h1>
     <hr>
-    <button>roll</button>
+    <button onclick="rollDice()">roll</button>
     <br>
     <div id="dice-area">
-        <div id="die1" class="die"></div>
-        <div id="die2" class="die"></div>
     </div>
-    <div id="number-row">
-        <div class="open-tile">1</div>
-        <div class="open-tile">2</div>
-        <div class="open-tile">3</div>
-        <div class="open-tile">4</div>
-        <div class="open-tile">5</div>
-        <div class="open-tile">6</div>
-        <div class="open-tile">7</div>
-        <div class="open-tile">8</div>
-        <div class="open-tile">9</div>
+
+    <div id="tiles">
     </div>
+
+    <button onclick="attemptShutSelected()">shut</button>
+
+    <div id="message-display"></div>
+
+    <script src="js/die.js"></script>
+    <script src="js/game.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

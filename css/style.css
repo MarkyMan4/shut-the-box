@@ -13,7 +13,7 @@
     display: inline-block;
 }
 
-.open-tile {
+.tile {
     padding: 10px;
     margin: 10px;
     border: 1px solid black;
@@ -21,6 +21,18 @@
     display: inline-block;
 }
 
-#number-row {
+.open-tile {
+    cursor: pointer;
+}
+
+.closed-tile {
+    background-color: black;
+}
+
+.selected-tile {
+    border: 2px solid rgb(75, 224, 75) !important;
+}
+
+#tiles {
     margin-top: 20px;
 }
