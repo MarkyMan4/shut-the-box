@@ -93,6 +93,15 @@ shutBtn.onclick = () => {
     shutBtn.disabled = true;
 }
 
-renderDice();
-renderTiles();
-updateScore();
+function initGame() {
+    game = new Game();
+    
+    rollBtn.disabled = false;
+    shutBtn.disabled = true;
+
+    renderDice();
+    renderTiles();
+    updateScore();
+}
+
+initGame();
