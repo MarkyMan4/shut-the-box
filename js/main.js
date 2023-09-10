@@ -2,7 +2,7 @@ const die1 = document.getElementById('die1');
 const die2 = document.getElementById('die2');
 const diceDisplay = document.getElementById('dice-area');
 const tileDisplay = document.getElementById('tiles');
-const messageDisplay = document.getElementById('message-display');
+const messageArea = document.getElementById('message-area');
 const rollBtn = document.getElementById('roll-btn');
 const shutBtn = document.getElementById('shut-btn');
 const scoreDisp = document.getElementById('score-disp');
@@ -50,6 +50,13 @@ function tileClicked() {
     }
 }
 
+const showMessage = async (messageText) => {
+    messageArea.innerHTML = `<div class="message">${messageText}</div>`;
+
+    window.setTimeout(() => {
+        messageArea.innerHTML = '';
+    }, 3000);
+}
 
 /*
 
@@ -73,7 +80,7 @@ shutBtn.onclick = () => {
     let selectedTotal = game.getSelectedTileTotal();
 
     if(rollTotal !== selectedTotal) {
-        messageDisplay.innerHTML = `selected total must equal ${rollTotal}`;
+        showMessage(`selected total must equal ${rollTotal}`);
         return;
     }
 
