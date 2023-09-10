@@ -5,6 +5,7 @@ const tileDisplay = document.getElementById('tiles');
 const messageDisplay = document.getElementById('message-display');
 const rollBtn = document.getElementById('roll-btn');
 const shutBtn = document.getElementById('shut-btn');
+const scoreDisp = document.getElementById('score-disp');
 
 let game = new Game();
 
@@ -30,6 +31,10 @@ function renderTiles() {
     }
 
     tileDisplay.innerHTML = tileHtml;
+}
+
+function updateScore() {
+    scoreDisp.innerHTML = `<b>Score:</b> ${game.score}`;
 }
 
 function tileClicked() {
@@ -74,6 +79,7 @@ shutBtn.onclick = () => {
 
     game.shutTiles();
     renderTiles();
+    updateScore();
 
     // enable roll button and disable shut button so user can't shut more than once per roll
     rollBtn.disabled = false;
@@ -82,3 +88,4 @@ shutBtn.onclick = () => {
 
 renderDice();
 renderTiles();
+updateScore();

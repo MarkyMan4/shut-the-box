@@ -4,6 +4,7 @@ class Game {
         this.die2 = new Die();
         this.selectedTiles = [];
         this.tilesShut = [];
+        this.score = 45; // initial score is all tiles: 1 + 2 + ... + 9
         this.gameOver = false;
     }
 
@@ -37,6 +38,9 @@ class Game {
         if(this.tilesShut.length === 9) {
             this.gameOver = true;
         }
+
+        // subtract shut tiles from the score
+        this.score -= this.getSelectedTileTotal();
 
         this.selectedTiles = [];
     }
