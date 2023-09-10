@@ -1,3 +1,8 @@
+body {
+    background-color: rgb(32, 32, 32);
+    color: rgb(216, 216, 216);
+}
+
 #dice-area {
     height: 100px;
     margin-top: 20px;
@@ -11,22 +16,29 @@
     border-radius: 5px;
     margin: 10px;
     display: inline-block;
+    background-color: white;
+    color: black;
 }
 
 .tile {
     padding: 10px;
     margin: 10px;
-    border: 1px solid black;
+    border: 2px solid rgb(75, 75, 75);
     border-radius: 5px;
     display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    user-select: none;
 }
 
 .open-tile {
     cursor: pointer;
+    background-color: rgb(54, 54, 54);
 }
 
 .closed-tile {
     background-color: black;
+    color: black;
 }
 
 .selected-tile {
@@ -35,10 +47,12 @@
 
 #tiles {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #score-disp {
     margin-bottom: 10px;
+    font-size: 30px;
 }
 
 .message {
@@ -48,4 +62,39 @@
     background-color: rgb(255, 0, 0, 0.1);
     padding: 10px;
     display: inline-block;
+    font-size: 24px;
+}
+
+.btn {
+    padding: 10px;
+    border: 1px solid rgb(77, 77, 77);
+    border-radius: 10px;
+    font-size: 30px;
+    user-select: none;
+}
+
+#roll-btn {
+    background-color: rgb(4, 117, 38);
+    color: white;
+}
+
+#roll-btn:hover {
+    background-color: rgb(4, 117, 38, 0.5);
+}
+
+#roll-btn:disabled {
+    background-color: rgb(146, 146, 146);
+}
+
+#shut-btn {
+    background-color: rgb(77, 43, 155);
+    color: white;
+}
+
+#shut-btn:hover {
+    background-color: rgb(77, 43, 155, 0.5);
+}
+
+#shut-btn:disabled {
+    background-color: rgb(146, 146, 146);
 }
