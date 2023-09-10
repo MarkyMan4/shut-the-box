@@ -3,6 +3,8 @@ const die2 = document.getElementById('die2');
 const diceDisplay = document.getElementById('dice-area');
 const tileDisplay = document.getElementById('tiles');
 const messageDisplay = document.getElementById('message-display');
+const rollBtn = document.getElementById('roll-btn');
+const shutBtn = document.getElementById('shut-btn');
 
 let game = new Game();
 
@@ -43,14 +45,25 @@ function tileClicked() {
     }
 }
 
-function rollDice() {
+
+/*
+
+button event listeners
+
+*/
+
+rollBtn.onclick = () => {
     game.rollDice();
     renderDice();
+
+    // disable button after roll, enable shut button so user can only roll once
+    rollBtn.disabled = true;
+    shutBtn.disabled = false;
 }
 
 // checks if the sum of the selected tiles is equal to the dice roll
 // if not, tiles cannot be shut
-function attemptShutSelected() {
+shutBtn.onclick = () => {
     let rollTotal = game.getRollTotal();
     let selectedTotal = game.getSelectedTileTotal();
 
@@ -61,6 +74,10 @@ function attemptShutSelected() {
 
     game.shutTiles();
     renderTiles();
+
+    // enable roll button and disable shut button so user can't shut more than once per roll
+    rollBtn.disabled = false;
+    shutBtn.disabled = true;
 }
 
 renderDice();
