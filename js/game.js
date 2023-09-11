@@ -1,7 +1,7 @@
 class Game {
     constructor() {
-        this.die1 = new Die();
-        this.die2 = new Die();
+        this.die1Val = 1;
+        this.die2Val = 1;
         this.selectedTiles = [];
         this.tilesShut = [];
         this.score = 45; // initial score is all tiles: 1 + 2 + ... + 9
@@ -9,12 +9,12 @@ class Game {
     }
 
     rollDice() {
-        this.die1.roll();
-        this.die2.roll();
+        this.die1Val = Math.ceil(Math.random() * 6);
+        this.die2Val = Math.ceil(Math.random() * 6);
     }
 
     getRollTotal() {
-        return this.die1.val + this.die2.val;
+        return this.die1Val + this.die2Val;
     }
 
     selectTile(tileVal) {

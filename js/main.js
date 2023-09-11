@@ -1,5 +1,3 @@
-const die1 = document.getElementById('die1');
-const die2 = document.getElementById('die2');
 const diceDisplay = document.getElementById('dice-area');
 const tileDisplay = document.getElementById('tiles');
 const messageArea = document.getElementById('message-area');
@@ -12,8 +10,8 @@ let game = new Game();
 function renderDice() {
     let diceHtml = '';
 
-    diceHtml += `<div class="die">${game.die1.val}</div>`;
-    diceHtml += `<div class="die">${game.die2.val}</div>`;
+    diceHtml += `<div class="die">${game.die1Val}</div>`;
+    diceHtml += `<div class="die">${game.die2Val}</div>`;
 
     diceDisplay.innerHTML = diceHtml;
 }
