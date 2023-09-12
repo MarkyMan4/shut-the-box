@@ -64,11 +64,21 @@ body {
     font-size: 30px;
 }
 
-.message {
+.err-message {
     margin-top: 10px;
     border: 1px solid gray;
     border-radius: 5px;
     background-color: rgb(255, 0, 0, 0.1);
+    padding: 10px;
+    display: inline-block;
+    font-size: 24px;
+}
+
+.win-message {
+    margin-top: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: rgba(23, 197, 0, 0.1);
     padding: 10px;
     display: inline-block;
     font-size: 24px;

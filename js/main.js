@@ -49,7 +49,7 @@ function tileClicked() {
 }
 
 const showMessage = async (messageText) => {
-    messageArea.innerHTML = `<div class="message">${messageText}</div>`;
+    messageArea.innerHTML = `<div class="err-message">${messageText}</div>`;
 
     window.setTimeout(() => {
         messageArea.innerHTML = '';
@@ -89,6 +89,11 @@ shutBtn.onclick = () => {
     // enable roll button and disable shut button so user can't shut more than once per roll
     rollBtn.disabled = false;
     shutBtn.disabled = true;
+
+    if(game.gameOver) {
+        rollBtn.disabled = true;
+        messageArea.innerHTML = `<div class="win-message">You win!</div>`;
+    }
 }
 
 function initGame() {
@@ -100,6 +105,7 @@ function initGame() {
     renderDice();
     renderTiles();
     updateScore();
+    messageArea.innerHTML = '';
 }
 
 initGame();
